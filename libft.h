@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ski <marvin@42lausanne.ch>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 16:34:57 by ski               #+#    #+#             */
-/*   Updated: 2021/11/04 16:34:59 by ski              ###   ########.fr       */
+/*   Created: 2021/10/28 14:11:04 by ski               #+#    #+#             */
+/*   Updated: 2021/10/28 14:11:09 by ski              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef __LIBFT_H__
+# define __LIBFT_H__
 #include "libft.h"
-
+#endif
 /* ************************************************************************** */
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-{
-	int	i;
-	int	size;
+#include <stdio.h>
+/*****************************/
 
-	size = (int)dstsize;
-
-	if (size - 1 > (int)sizeof(src))
-		size = (int)sizeof(src) + 1;
-
-	if (size == 0) 
-		return (ft_strlen(src));
-	i = 0;
-
-	while ((i < size - 1) & (dst[i] != '\0'))
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
-}
+int ft_isalpha(int c);
+int ft_isdigit(int c);
+int ft_isalnum(int c);
+int ft_isascii(int c);
+int ft_isprint(int c);
+size_t ft_strlen(const char *s);
+void *ft_memset(void *b, int c, size_t len);
+void ft_bzero(void *s, size_t n);
+void *ft_memcpy(void *dst, const void *src, size_t n);
+void *ft_memmove(void *dst, const void *src, size_t len);
+size_t ft_strlcpy(char *dst, const char *src, size_t dstsize);
